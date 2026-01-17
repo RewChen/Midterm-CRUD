@@ -1,0 +1,38 @@
+### 1) สร้าง Guest ใหม่ (เคสรันผ่าน)
+POST http://localhost:3000/api/guests
+Content-Type: application/json
+
+{
+  "name": "Nattapong",
+  "phone": "0812345678",
+  "email": "nattapong@example.com",
+  "address": "Bangkok, Thailand"
+}
+
+### 2) เคสไม่ผ่าน (ไม่มี name)
+POST http://localhost:3000/api/guests
+Content-Type: application/json
+
+{
+  "phone": "0812345678"
+}
+
+### 3) ดึงทั้งหมด
+GET http://localhost:3000/api/guests
+
+### 4) ดึงตาม id
+GET http://localhost:3000/api/guests/1
+
+### 5) แก้ไขข้อมูล (PUT)
+PUT http://localhost:3000/api/guests/1
+Content-Type: application/json
+
+{
+  "name": "Nattapong Edited",
+  "phone": "0899999999",
+  "email": "newmail@example.com",
+  "address": "Chiang Mai"
+}
+
+### 6) ลบ
+DELETE http://localhost:3000/api/guests/1
